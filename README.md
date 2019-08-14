@@ -3,4 +3,4 @@ This code is useful to parse the JSON formatted file. Here the concept id (Conce
 
 EFO_0000304.json is the input example file here.
 
-The command will be -- python Concept-id.py -infile EFO_0000304.json 
+The command will be = 'python Concept-id.py -infile EFO_0000304.json' 
