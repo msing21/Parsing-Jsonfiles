@@ -13,19 +13,22 @@ def json_to_csv(filename):
             for i in id:
                 conceptid = id['closeMatch']
                 df1 = pd.DataFrame.from_dict(conceptid)
-                df1.to_csv('/home/manali/Downloads/json/EFO_0000304.csv')
-                return df1
+                df1[0] = df1[0].map(lambda x: x.lstrip('http://linkedlifedata.com/resource/umls/id/'))
+                df1.to_csv('test.csv', index=None, header=None)
+                
 
-
-# print (json_to_csv('/home/manali/Downloads/C0858252'))
+def getArgs():
+    parser = argparse.ArgumentParser('python')
+    parser.add_argument('-infile', required = True)
+    return parser.parse_args()
 
 if __name__ == "__main__":
-    filename = '/home/manali/Downloads/json/EFO_0000304.json'
+    args = getArgs()
+    filename = json_to_csv(args.infile)
     start = time.time()
-    json_to_csv(filename)
     end = time.time()
 
     print 'time elapsed:' + str(end - start)
-    print json_to_csv(filename)
+    
 
 
