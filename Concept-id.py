@@ -31,7 +31,7 @@ if __name__ == "__main__":
     start = time.time()
     end = time.time()
 
-    print 'time elapsed:' + str(end - start)
+    print ('time elapsed:' + str(end - start))
     
 
 
